@@ -9,7 +9,7 @@
 请确保在运行脚本前，你的文件夹布局如下所示：
 
 ```text
-WinDevEnvSetup/
+DevEnvSetup/
 ├── Windows/                   # Windows 版本脚本
 │   ├── Install.bat            # [学生运行] 鼠标右键-以管理员身份运行
 │   ├── Install.ps1            # 主控程序逻辑
@@ -50,7 +50,7 @@ WinDevEnvSetup/
 
 ## 🚀 安装步骤
 
-1. 将整个 `WinDevEnvSetup` 文件夹拷贝到你的本地磁盘（**建议放在非系统盘**，如 `D:\WinDevEnvSetup`）。
+1. 将整个 `DevEnvSetup` 文件夹拷贝到你的本地磁盘（**建议放在非系统盘**，如 `D:\DevEnvSetup`）。
 2. 进入文件夹，找到 **`Install.bat`**。
 3. **右键点击** 该文件，选择 **“以管理员身份运行”**。
 4. 根据屏幕提示进行操作：

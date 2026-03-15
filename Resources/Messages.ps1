@@ -21,6 +21,7 @@
 
         # --- Step 03: Podman ---
         "PodmanLink"    = "正在创建数据存储符号链接..."
+        "PodmanMirror"  = "正在配置 Podman 国内镜像加速..."
         "LocalFirst"    = "检测到本地资源 {0}，优先使用本地安装。"
         "NetFallback"   = "未发现本地资源，尝试通过网络下载安装..."
         "NetworkDrive"  = "检测到网络驱动器，正在拷贝到本地临时目录以规避大小限制..."
@@ -63,6 +64,7 @@
         "ScoopBucket"   = "Configuring Buckets and basic tools (7zip, git)..."
 
         "PodmanLink"    = "Creating symbolic link for data storage..."
+        "PodmanMirror"  = "Configuring Podman registry mirrors..."
         "LocalFirst"    = "Local resource {0} found. Using local installation."
         "NetFallback"   = "Local resource not found. Falling back to network..."
         "NetworkDrive"  = "Network drive detected. Copying to local temp to bypass limits..."

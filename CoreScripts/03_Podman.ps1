@@ -30,3 +30,35 @@ if (!(podman machine list | Select-String "podman-machine-default")) {
         podman machine init --rootful
     }
 }
+
+# Configure registry mirrors for better connectivity in CN
+Write-Host (T "PodmanMirror") -ForegroundColor Cyan
+$MirrorConfig = @'
+unqualified-search-registries = ["docker.io"]
+
+[[registry]]
+prefix = "docker.io"
+location = "docker.io"
+
+[[registry.mirror]]
+location = "docker.m.daocloud.io"
+
+[[registry.mirror]]
+location = "mirror.ccs.tencentyun.com"
+'@
+
+$RemoteDir = "/etc/containers/registries.conf.d"
+$RemoteFile = "$RemoteDir/99-cn-mirrors.conf"
+$startedByScript = $false
+$status = podman machine inspect --format "{{.State}}" 2>$null
+if ($status -ne "running") {
+    podman machine start
+    $startedByScript = $true
+}
+
+podman machine ssh -- "sudo mkdir -p $RemoteDir"
+$MirrorConfig | podman machine ssh -- "sudo tee $RemoteFile > /dev/null"
+
+if ($startedByScript) {
+    podman machine stop
+}

@@ -1,4 +1,5 @@
-. (Join-Path $PSScriptRoot "Resources\Messages.ps1")
+$RootDir = Split-Path $PSScriptRoot -Parent
+. (Join-Path $RootDir "Resources\Messages.ps1")
 
 # Load state file
 $StateFile = Join-Path $PSScriptRoot ".setup_state.json"

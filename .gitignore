@@ -1,6 +1,40 @@
-﻿**/*.xz
-**/*.msi
-**/*.zst
-**/*.gzip
-**/*.tar
+﻿# Default deny: ignore everything, then explicitly allow tracked source/docs.
+*
 .*
+
+# Repository files kept in version control.
+!/.gitignore
+!/README.md
+!/Resources/
+!/Windows/
+!/macOS/
+
+# Resources: keep only static configuration/assets that belong in the repo.
+/Resources/*
+!/Resources/Container.code-profile
+!/Resources/Dockerfile
+!/Resources/Messages.ps1
+
+# Windows scripts and docs.
+/Windows/*
+!/Windows/CoreScripts/
+!/Windows/*.ps1
+!/Windows/*.bat
+!/Windows/*.md
+
+/Windows/CoreScripts/*
+!/Windows/CoreScripts/*.ps1
+
+# macOS scripts and docs.
+/macOS/*
+!/macOS/CoreScripts/
+!/macOS/*.sh
+!/macOS/*.md
+
+/macOS/CoreScripts/*
+!/macOS/CoreScripts/*.sh
+
+# Local/editor/generated state.
+**/.DS_Store
+**/.vscode/
+/Windows/.setup_state.json
